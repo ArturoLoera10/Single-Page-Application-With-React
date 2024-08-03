@@ -16,8 +16,6 @@ export const HeroPage = () => {
     return <Navigate to={"marvel"} />;
   }
 
-  console.log(hero);
-
   return (
     <div className="row mt-5">
       <div className="col-4 animate__animated animate__fadeInLeft">
