@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { LoginPage } from "../auth";
 import { childrenRoutes, HeroesRoutes } from "../heroes/routes/HeroesRoutes";
+import { PrivateRouter } from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <HeroesRoutes />,
+    element: (
+      <PrivateRouter>
+        <HeroesRoutes />
+      </PrivateRouter>
+    ),
     children: childrenRoutes,
   },
 ]);
